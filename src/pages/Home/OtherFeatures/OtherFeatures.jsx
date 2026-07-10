@@ -1,7 +1,6 @@
 import React from "react";
 import "./OtherFeatures.css";
 import { LiaShippingFastSolid } from "react-icons/lia";
-import { RiRefund2Line } from "react-icons/ri";
 import { MdOutlinePayment } from "react-icons/md";
 import { BiSupport } from "react-icons/bi";
 
@@ -16,7 +15,7 @@ const OtherFeatures = () => {
         <div>
           <h4 className="text-xl font-bold mb-2 text-black">Free Shipping</h4>
           <p className="text-gray-900">
-            Free Shipping worldwide for orders over $1130
+            Free Shipping across India for orders over ₹5,000
           </p>
         </div>
       </div>
@@ -32,7 +31,34 @@ const OtherFeatures = () => {
       </div>
 
       <div className="flex flex-col md:flex-row items-center gap-6 md:border-r-2 border-black">
-        <RiRefund2Line className="text-6xl" />
+        <svg
+          className="text-6xl w-[60px] h-[60px]"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          {/* Circular return arrow */}
+          <path d="M3 12a9 9 0 0 1 15-6.7L21 8" />
+          <path d="M21 3v5h-5" />
+          <path d="M21 12a9 9 0 0 1-15 6.7L3 16" />
+          <path d="M3 21v-5h5" />
+          {/* Rupee Symbol '₹' centered */}
+          <text
+            x="50%"
+            y="58%"
+            dominantBaseline="middle"
+            textAnchor="middle"
+            fontSize="8.5"
+            fontWeight="bold"
+            fill="currentColor"
+            fontFamily="sans-serif"
+          >
+            ₹
+          </text>
+        </svg>
         <div>
           <h4 className="text-xl font-bold mb-2 text-black">Money Guarentee</h4>
           <p className="text-gray-900">
