@@ -11,6 +11,9 @@
   transform: translate(-50%, -50%);
 }
 .hero-slide img {
+  width: 100%;
+  object-fit: cover;
+  display: block;
   animation: kenburns-top 16s infinite ease-out both alternate;
 }
 .hero-slide div h1 {
