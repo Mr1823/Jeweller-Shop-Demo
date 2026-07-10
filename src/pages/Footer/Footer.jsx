@@ -93,7 +93,7 @@ const Footer = () => {
 
       <div>
         <p className="text-sm font-medium text-gray-500 text-center">
-          Copyright &copy; Uzzal Bhowmik 2024. All Rights Reserved.
+          Copyright &copy; The Jewelz Store 2024. All Rights Reserved.
         </p>
       </div>
     </div>

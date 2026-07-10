@@ -6,8 +6,8 @@ const MarqueeSection = () => {
   const marqueeData = [
     "Originals",
     "Handcrafted For You",
-    "UB & CO. Pre Owned",
-    "Uzzal Bhowmik Designed",
+    "Jewelz & Co. Pre Owned",
+    "Jewelz Custom Designed",
     "Sale",
     "Rich Heritage",
     "Trusted by Thousands",
