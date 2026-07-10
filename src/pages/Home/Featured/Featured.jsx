@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Featured.css";
 import useProducts from "../../../hooks/useProducts";
-import featuredBanner from "../../../assets/featuredBanner.jpg";
+import featuredBanner from "../../../assets/featuredbanner.jpg";
 import FeaturedCard from "./FeaturedCard/FeaturedCard";
 import { Link } from "react-router-dom";
 import AnimateText from "@moxy/react-animate-text";
