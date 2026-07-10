@@ -9,9 +9,8 @@ const useProducts = () => {
   } = useQuery({
     queryKey: ["products"],
     queryFn: async () => {
-      const res = await axios.get(
-        "https://ub-jewellers-server.onrender.com/products"
-      );
+      const apiBaseUrl = import.meta.env.VITE_API_URL || "https://ub-jewellers-server-production.up.railway.app";
+      const res = await axios.get(`${apiBaseUrl}/products`);
       return res.data;
     },
   });
