@@ -16,7 +16,7 @@ const useUserInfo = () => {
     enabled:
       !isAuthLoading &&
       user?.uid !== undefined &&
-      localStorage.getItem("ub-jewellers-jwt-token") !== null,
+      localStorage.getItem("the-jewel-store-jwt-token") !== null,
     queryKey: ["user"],
     queryFn: async () => {
       const res = await axiosSecure.get(`/user?email=${user?.email}`);
@@ -29,7 +29,7 @@ const useUserInfo = () => {
     if (
       !isAuthLoading &&
       user?.uid !== undefined &&
-      localStorage.getItem("ub-jewellers-jwt-token") !== null &&
+      localStorage.getItem("the-jewel-store-jwt-token") !== null &&
       userFromDB?.admin
     ) {
       axiosSecure.get("/admin/total-spent").then((res) => {

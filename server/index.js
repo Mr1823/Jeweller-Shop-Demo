@@ -42,7 +42,7 @@ async function startServer() {
     await client.connect();
     console.log("✅ Successfully connected to MongoDB!");
 
-    const db = client.db("ub-jewellers");
+    const db = client.db("the-jewel-store");
 
     // Collections
     const collections = {
@@ -69,7 +69,7 @@ async function startServer() {
     adminRoutes(app, collections);
 
     app.get("/", (req, res) => {
-      res.send("UB Jewellers Server is running 💎");
+      res.send("The Jewel Store Server is running 💎");
     });
 
     app.listen(port, () => {

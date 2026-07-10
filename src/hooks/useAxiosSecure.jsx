@@ -16,7 +16,7 @@ const useAxiosSecure = () => {
   axiosSecure.interceptors.request.use(
     (config) => {
       // Get the access token from localStorage
-      const accessToken = localStorage.getItem("ub-jewellers-jwt-token");
+      const accessToken = localStorage.getItem("the-jewel-store-jwt-token");
 
       // If an access token exists, add it to the request headers
       if (accessToken) {

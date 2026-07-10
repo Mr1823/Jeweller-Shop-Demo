@@ -1,7 +1,7 @@
 {
-  "name": "ub-jewellers-server",
+  "name": "the-jewel-store-server",
   "version": "1.0.0",
-  "description": "Backend server for UB Jewellers e-commerce application",
+  "description": "Backend server for The Jewel Store e-commerce application",
   "main": "index.js",
   "type": "module",
   "scripts": {

@@ -16,7 +16,7 @@ const useCart = () => {
     enabled:
       !isAuthLoading &&
       user?.uid !== undefined &&
-      localStorage.getItem("ub-jewellers-jwt-token") !== null,
+      localStorage.getItem("the-jewel-store-jwt-token") !== null,
     queryKey: ["cart"],
     queryFn: async () => {
       const res = await axiosSecure.get(`/cart?email=${user?.email}`);
@@ -29,7 +29,7 @@ const useCart = () => {
     enabled:
       !isAuthLoading &&
       user?.uid !== undefined &&
-      localStorage.getItem("ub-jewellers-jwt-token") !== null,
+      localStorage.getItem("the-jewel-store-jwt-token") !== null,
     queryKey: ["cart-subtotal"],
     queryFn: async () => {
       const res = await axiosSecure.get(`/cart/subtotal?email=${user?.email}`);

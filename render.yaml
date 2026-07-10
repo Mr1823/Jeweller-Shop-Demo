@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: ub-jewellers-backend
+    name: the-jewel-store-backend
     runtime: node
     plan: free
     rootDir: server

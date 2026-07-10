@@ -66,14 +66,14 @@ const AuthProvider = ({ children }) => {
           })
           .then((res) => {
             if (res.data.token) {
-              localStorage.setItem("ub-jewellers-jwt-token", res.data.token);
+              localStorage.setItem("the-jewel-store-jwt-token", res.data.token);
 
-              localStorage.getItem("ub-jewellers-jwt-token") &&
+              localStorage.getItem("the-jewel-store-jwt-token") &&
                 setIsAuthLoading(false);
             }
           });
       } else {
-        localStorage.removeItem("ub-jewellers-jwt-token");
+        localStorage.removeItem("the-jewel-store-jwt-token");
         setUser(null);
         setIsAuthLoading(false);
       }

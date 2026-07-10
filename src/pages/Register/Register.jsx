@@ -109,9 +109,10 @@ const Register = () => {
 
     // convert image to base64
     convertBase64(profilePicFile[0]).then((base64Image) => {
+      const apiBaseUrl = import.meta.env.VITE_API_URL || "https://ub-jewellers-server-production.up.railway.app";
       // upload image to cloudinary
       axios
-        .post("https://ub-jewellers-server.onrender.com/cloudinary-upload", {
+        .post(`${apiBaseUrl}/cloudinary-upload`, {
           name: data?.name,
           img: base64Image,
         })
@@ -137,7 +138,7 @@ const Register = () => {
                   .then(() => {
                     // add user to users collection in db
                     axios.post(
-                      "https://ub-jewellers-server.onrender.com/users",
+                      `${apiBaseUrl}/users`,
                       {
                         name: result?.user?.displayName,
                         email: result?.user?.email,
@@ -176,8 +177,9 @@ const Register = () => {
     setRegisterError(false);
     signInGoogle()
       .then((res) => {
+        const apiBaseUrl = import.meta.env.VITE_API_URL || "https://ub-jewellers-server-production.up.railway.app";
         // add user to users collection in db
-        axios.post("https://ub-jewellers-server.onrender.com/users", {
+        axios.post(`${apiBaseUrl}/users`, {
           name: res?.user?.displayName,
           email: res?.user?.email,
           img: res?.user?.photoURL,

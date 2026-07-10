@@ -60,9 +60,10 @@ const Shop = () => {
   useEffect(() => {
     setFilterLoading(true);
 
+    const apiBaseUrl = import.meta.env.VITE_API_URL || "https://ub-jewellers-server-production.up.railway.app";
     axios
       .get(
-        `https://ub-jewellers-server.onrender.com/products/filter?category=${category}&minPrice=${minimumPrice}&maxPrice=${maximumPrice}&priceOrder=${priceSortingOrder}&size=${size}&carate=${carate}&search=${searchText}`
+        `${apiBaseUrl}/products/filter?category=${category}&minPrice=${minimumPrice}&maxPrice=${maximumPrice}&priceOrder=${priceSortingOrder}&size=${size}&carate=${carate}&search=${searchText}`
       )
       .then((res) => {
         setFilteredProducts(res.data);
@@ -109,8 +110,9 @@ const Shop = () => {
 
   useEffect(() => {
     // fetch all categories
+    const apiBaseUrl = import.meta.env.VITE_API_URL || "https://ub-jewellers-server-production.up.railway.app";
     axios
-      .get("https://ub-jewellers-server.onrender.com/categories")
+      .get(`${apiBaseUrl}/categories`)
       .then((res) => {
         setAllCategories(res.data);
       })

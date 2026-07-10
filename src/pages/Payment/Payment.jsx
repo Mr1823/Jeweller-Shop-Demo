@@ -63,7 +63,7 @@ const Payment = () => {
         key: import.meta.env.VITE_RAZORPAY_KEY_ID || "rzp_test_YOUR_KEY_HERE",
         amount: Math.round(orderPrice * 100), // Razorpay expects amount in paise (1 INR = 100 paise)
         currency: "INR",
-        name: "UB Jewellers",
+        name: "The Jewel Store",
         description: "Secure purchase of premium jewelry",
         image: "/logo.png",
         order_id: orderId,

@@ -7,9 +7,10 @@ const useSearchedProducts = (searchText) => {
 
   useEffect(() => {
     setIsSearchLoading(true);
+    const apiBaseUrl = import.meta.env.VITE_API_URL || "https://ub-jewellers-server-production.up.railway.app";
     axios
       .get(
-        `https://ub-jewellers-server.onrender.com/products?searchText=${searchText}`
+        `${apiBaseUrl}/products?searchText=${searchText}`
       )
       .then((res) => {
         setSearchedProducts(res.data);

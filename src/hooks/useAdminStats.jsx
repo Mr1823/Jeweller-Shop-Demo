@@ -16,7 +16,7 @@ const useAdminStats = () => {
     enabled:
       !isAuthLoading &&
       user?.uid !== undefined &&
-      localStorage.getItem("ub-jewellers-jwt-token") !== null,
+      localStorage.getItem("the-jewel-store-jwt-token") !== null,
     queryKey: ["admin-stats"],
     queryFn: async () => {
       const res = await axiosSecure.get("/admin-dashboard/stats");

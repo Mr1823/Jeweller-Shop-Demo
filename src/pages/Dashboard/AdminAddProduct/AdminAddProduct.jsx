@@ -33,8 +33,9 @@ const AdminAddProduct = () => {
   // fetch categories
   useEffect(() => {
     if (user) {
+      const apiBaseUrl = import.meta.env.VITE_API_URL || "https://ub-jewellers-server-production.up.railway.app";
       axios
-        .get("https://ub-jewellers-server.onrender.com/categories")
+        .get(`${apiBaseUrl}/categories`)
         .then((res) => setCategories(res.data))
         .catch((e) => console.error(e));
     }

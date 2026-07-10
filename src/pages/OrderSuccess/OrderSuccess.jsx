@@ -63,7 +63,7 @@ const OrderSuccess = () => {
       },
       // Your own data
       sender: {
-        company: "UB Jewellers",
+        company: "The Jewel Store",
         address: "Narayanganj City Corporation",
         zip: "1400",
         city: "Dhaka",
@@ -98,7 +98,7 @@ const OrderSuccess = () => {
         price: product?.price,
         "tax-rate": 0,
       })),
-      "bottom-notice": "Thanks for shopping with UB Jewellers ❣️",
+      "bottom-notice": "Thanks for shopping with The Jewel Store ❣️",
       settings: {
         currency: "USD",
       },

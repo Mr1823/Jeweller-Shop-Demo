@@ -47,13 +47,14 @@ const Header = () => {
   // fetch or update upper nav notifications
   useEffect(() => {
     // un-comment to add new notification(reminder: notification array is in backend)
-    // axios.post("https://ub-jewellers-server.onrender.com/nav-notifications", {}).then((res) => {
+    const apiBaseUrl = import.meta.env.VITE_API_URL || "https://ub-jewellers-server-production.up.railway.app";
+    // axios.post(`${apiBaseUrl}/nav-notifications`, {}).then((res) => {
     //   console.log(res.data);
     // });
 
     // fetching notifications
     axios
-      .get("https://ub-jewellers-server.onrender.com/nav-notifications")
+      .get(`${apiBaseUrl}/nav-notifications`)
       .then((res) => setNavNotifications(res.data))
       .catch((error) => console.error(error));
   }, []);
