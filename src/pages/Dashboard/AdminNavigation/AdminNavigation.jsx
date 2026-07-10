@@ -38,10 +38,14 @@ const AdminNavigation = ({ sidebarCollapsed, setSidebarCollapsed }) => {
     <div>
       <header className="min-h-16 bg-white top-0 w-full fixed shadow z-[9999]">
         <div className="flex justify-between items-center h-16 gap-10 md:gap-0">
-          <div className="flex justify-between items-center gap-x-3 w-[50%] md:w-[19.8%] border">
-            <div className="flex-grow flex flex-col md:flex-row items-center justify-around bg-[var(--pink-gold)] px-2 py-7 h-16">
-              <Link to={"/"} className="block w-[90%] md:w-[65%]">
-                <img src={logo} alt="logo" className="w-full" />
+          <div className={`flex justify-between items-center gap-x-3 ${!sidebarCollapsed ? "w-[85vw] md:w-[240px]" : "w-[65px] md:w-[65px]"} transition-all duration-500 ease-in-out border`}>
+            <div className="w-full flex items-center justify-center bg-[var(--pink-gold)] px-2 py-3 h-16 overflow-hidden">
+              <Link to={"/"} className="block w-full flex items-center justify-center">
+                <img
+                  src={logo}
+                  alt="logo"
+                  className={`${!sidebarCollapsed ? "h-9 w-auto max-w-none" : "h-9 w-auto max-w-none object-left object-contain -ml-1"} transition-all duration-500`}
+                />
               </Link>
             </div>
           </div>
@@ -94,7 +98,7 @@ const AdminNavigation = ({ sidebarCollapsed, setSidebarCollapsed }) => {
 
       <aside
         className={`${
-          !sidebarCollapsed ? "w-[92vw] md:w-[19.72%]" : "w-[55px]"
+          !sidebarCollapsed ? "w-[85vw] md:w-[240px]" : "w-[65px] md:w-[65px]"
         } h-[calc(100vh-64px)] whitespace-nowrap fixed shadow overflow-x-visible transition-all duration-500 ease-in-out top-16 bg-black z-[9999]`}
       >
         <div className="sidebar-menu-con flex flex-col justify-between h-full">

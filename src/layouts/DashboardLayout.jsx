@@ -12,7 +12,7 @@ const DashboardLayout = () => {
   const { user, isAuthLoading } = useAuthContext();
 
   // amdin dashboard side-navbar control
-  const [sidebarCollapsed, setSidebarCollapsed] = useState(true);
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
   return (
     <div style={{ fontFamily: "var(--poppins)" }} className="max-w-screen-2xl">
@@ -29,10 +29,10 @@ const DashboardLayout = () => {
                 />
                 <div className="mt-20 mb-24">
                   <div
-                    className={`w-[100vw-100px] ml-[60px] ${
+                    className={`w-[calc(100vw-80px)] ml-[70px] ${
                       !sidebarCollapsed
-                        ? "md:w-[calc(100vw-330px)] md:ml-[300px]"
-                        : "md:ml-[75px] md:w-[calc(100vw-100px)]"
+                        ? "md:w-[calc(100vw-280px)] md:ml-[260px]"
+                        : "md:ml-[85px] md:w-[calc(100vw-110px)]"
                     } py-5 transition-all duration-500 ease-in-out md:px-6`}
                   >
                     <Outlet />
