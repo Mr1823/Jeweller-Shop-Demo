@@ -44,8 +44,8 @@ const AdminDashboard = () => {
         <p className="text-sm text-gray-500">Welcome to your dashboard</p>
       </div>
       {/*----------------- stats ------------------*/}
-      <div className="w-full flex flex-col md:flex-row gap-4 justify-between items-stretch">
-        <div className="flex justify-between items-start border p-4 rounded-lg w-full md:w-1/4 shadow">
+      <div className="w-full grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 items-stretch">
+        <div className="flex justify-between items-start border p-4 rounded-lg w-full shadow">
           <div>
             <h4 className="text-2xl font-bold mb-1">
               ₹
@@ -107,7 +107,7 @@ const AdminDashboard = () => {
         </div>
 
         {/* ----------------------------------------- */}
-        <div className="flex justify-between items-start border p-4 rounded-lg w-full md:w-1/4 shadow">
+        <div className="flex justify-between items-start border p-4 rounded-lg w-full shadow">
           <div>
             <h4 className="text-2xl font-bold mb-1">
               {adminStats?.currentMonthStatsData?.totalOrders}
@@ -166,10 +166,10 @@ const AdminDashboard = () => {
         </div>
 
         {/* -------------------------------------------- */}
-        <div className="flex justify-between items-start border p-4 rounded-lg w-full md:w-1/4 shadow">
+        <div className="flex justify-between items-start border p-4 rounded-lg w-full shadow">
           <div>
             <h4 className="text-2xl font-bold mb-1">
-              $
+              ₹
               {parseFloat(
                 adminStats?.currentMonthStatsData?.averageOrderValue
               ).toFixed(2)}
@@ -229,7 +229,7 @@ const AdminDashboard = () => {
         </div>
 
         {/* --------------------------------------------- */}
-        <div className="flex justify-between items-start border p-4 rounded-lg w-full md:w-1/4 shadow">
+        <div className="flex justify-between items-start border p-4 rounded-lg w-full shadow">
           <div>
             <h4 className="text-2xl font-bold mb-1">
               {adminStats?.customerStatsData?.newCustomers}
