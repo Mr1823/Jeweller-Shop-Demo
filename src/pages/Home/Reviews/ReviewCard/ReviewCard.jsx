@@ -1,13 +1,14 @@
 import React from "react";
 import StarRatings from "react-star-ratings";
+import defaultUserImg from "../../../../assets/placeholder-user.png";
 
 const ReviewCard = ({ reviewObj }) => {
-  const { name, img, review, rating, location } = reviewObj;
+  const { name, review, rating, location } = reviewObj;
   return (
     <div className="border border-black w-[90%] md:w-[80%] mx-auto flex flex-col md:flex-row items-start gap-4 p-10 bg-white">
       <div className="w-[50%] md:w-[20%] mx-auto md:mx-0">
         <img
-          src={img}
+          src={defaultUserImg}
           alt={name}
           className="rounded-full w-full"
           referrerPolicy="no-referrer"
