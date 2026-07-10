@@ -110,7 +110,7 @@ const MyOrders = () => {
                       </p>
                     ))}
                   </td>
-                  <td>${order.total}</td>
+                  <td>₹{order.total}</td>
                   <td
                     className={`${
                       order.orderStatus.toLowerCase() === "processing"

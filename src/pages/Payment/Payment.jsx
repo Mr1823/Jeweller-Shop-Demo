@@ -128,7 +128,7 @@ const Payment = () => {
           <div className="w-full mt-2">
             <div className="flex justify-between items-center bg-gray-50 p-3 rounded-lg border border-gray-100 mb-4">
               <span className="text-gray-600 font-medium text-sm">Order Subtotal:</span>
-              <span className="text-lg font-bold text-gray-800">${orderTotal}</span>
+              <span className="text-lg font-bold text-gray-800">₹{orderTotal}</span>
             </div>
 
             {paymentSuccess ? (

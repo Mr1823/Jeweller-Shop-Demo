@@ -170,7 +170,7 @@ const OrderSuccess = () => {
                     Phone: <span className="font-bold">{orderObj?.email}</span>
                   </p>
                   <p className="font-medium text-lg">
-                    Total: <span className="font-bold">${orderObj?.total}</span>
+                    Total: <span className="font-bold">₹{orderObj?.total}</span>
                   </p>
                   <p className="font-medium text-lg">
                     Payment Method:{" "}
@@ -250,12 +250,12 @@ const OrderSuccess = () => {
                       <tr key={product._id}>
                         <td>{product.name}</td>
                         <td>{product.quantity}</td>
-                        <td>${product.price}</td>
+                        <td>₹{product.price}</td>
                       </tr>
                     ))}
                     <tr className="font-bold">
                       <td colSpan={2}>Total</td>
-                      <td>${orderObj?.total}</td>
+                      <td>₹{orderObj?.total}</td>
                     </tr>
 
                     <tr className="font-bold">

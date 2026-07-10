@@ -128,7 +128,7 @@ const Wishlist = () => {
                             </div>
                           </div>
                         </td>
-                        <td>${product.discountPrice || product.price}</td>
+                        <td>₹{product.discountPrice || product.price}</td>
                         <td>{product.stock}</td>
                         <th className="flex items-center gap-3">
                           {handleExistInCart(product.productId) ? (

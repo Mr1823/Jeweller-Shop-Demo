@@ -25,7 +25,7 @@ const FeaturedCard = ({ product, counter }) => {
             {name}
           </h5>
           <div className="flex items-center gap-4">
-            <h5 className="text-slate-600">${price}</h5>
+            <h5 className="text-slate-600">₹{price}</h5>
             {discountPrice && (
               <h6 className="line-through text-gray-300">{discountPrice}</h6>
             )}

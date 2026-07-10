@@ -66,9 +66,9 @@ const ProductDescription = () => {
         </h4>
 
         <p className="text-gray-600">
-          We offer Free Standard Shipping for all orders over $75 to the 50
-          states and the District of Columbia. The minimum order value must be
-          $75 before taxes, shipping and handling. Shipping fees are
+          We offer Free Standard Shipping for all orders over ₹5,000 across
+          India. The minimum order value must be
+          ₹5,000 before taxes, shipping and handling. Shipping fees are
           non-refundable.
         </p>
 

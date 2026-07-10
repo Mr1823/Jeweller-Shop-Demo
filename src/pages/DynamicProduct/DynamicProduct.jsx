@@ -158,7 +158,7 @@ const DynamicProduct = () => {
               </div>
               <div>
                 <h4 className="mt-2 px-2 font-bold text-3xl py-2">
-                  $ {dynamicProduct?.price}
+                  ₹ {dynamicProduct?.price}
                 </h4>
               </div>
             </div>

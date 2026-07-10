@@ -170,7 +170,7 @@ const AdminOrders = () => {
                       />
                     </td>
                     <td>{order.orderDetails.length}</td>
-                    <td>${order.total}</td>
+                    <td>₹{order.total}</td>
                     <td>
                       <Link
                         to={"/order-success"}

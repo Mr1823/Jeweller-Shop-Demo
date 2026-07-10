@@ -3,7 +3,7 @@ import "./AdminDashboard.css";
 import {
   PiChartLineUp,
   PiListChecksBold,
-  PiCurrencyDollarBold,
+
   PiChartBarBold,
   PiUsersThreeBold,
   PiChartLineDown,
@@ -48,7 +48,7 @@ const AdminDashboard = () => {
         <div className="flex justify-between items-start border p-4 rounded-lg w-full md:w-1/4 shadow">
           <div>
             <h4 className="text-2xl font-bold mb-1">
-              $
+              ₹
               {parseFloat(
                 adminStats?.currentMonthStatsData?.totalSells
               ).toFixed(2)}
@@ -100,8 +100,8 @@ const AdminDashboard = () => {
             </div>
           </div>
           <div>
-            <span className="text-lg text-white rounded-full flex items-center justify-center h-11 w-11 shrink-0 bg-green-500">
-              <PiCurrencyDollarBold className="text-2xl" />
+            <span className="text-lg text-white rounded-full flex items-center justify-center h-11 w-11 shrink-0 bg-green-500 font-bold">
+              ₹
             </span>
           </div>
         </div>
@@ -345,7 +345,7 @@ const AdminDashboard = () => {
                       </div>
                     </td>
                     <td>{product.category}</td>
-                    <td>${product.discountPrice || product.price}</td>
+                    <td>₹{product.discountPrice || product.price}</td>
                     <td className="font-bold">{product.sold}</td>
                   </tr>
                 ))}

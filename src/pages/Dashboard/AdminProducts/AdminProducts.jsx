@@ -173,7 +173,7 @@ const AdminProducts = () => {
                         )}
                       </td>
                       <td>{product.sold}</td>
-                      <td>${product.discountPrice || product.price}</td>
+                      <td>₹{product.discountPrice || product.price}</td>
                       <td className="space-y-2 md:space-y-0 md:space-x-2 flex flex-col md:flex-row items-center">
                         <div className="tooltip" data-tip="Edit">
                           <Link
