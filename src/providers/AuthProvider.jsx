@@ -67,10 +67,14 @@ const AuthProvider = ({ children }) => {
           .then((res) => {
             if (res.data.token) {
               localStorage.setItem("the-jewel-store-jwt-token", res.data.token);
-
-              localStorage.getItem("the-jewel-store-jwt-token") &&
-                setIsAuthLoading(false);
+              setIsAuthLoading(false);
+            } else {
+              setIsAuthLoading(false);
             }
+          })
+          .catch((err) => {
+            console.error("JWT fetch failed:", err);
+            setIsAuthLoading(false); // don't hang forever
           });
       } else {
         localStorage.removeItem("the-jewel-store-jwt-token");

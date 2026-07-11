@@ -247,56 +247,56 @@ const AdminCategories = () => {
             </button>
           </form>
         </div>
-
-        <dialog id="update-category-modal" className="modal">
-          <div className="modal-box">
-            <form method="dialog">
-              <button
-                className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
-                onClick={() => setSelectedCategory({})}
-              >
-                ✕
-              </button>
-            </form>
-            <h3 className="font-bold text-lg">Update Category</h3>
-
-            {categoryUpdateError && (
-              <p className="text-error font-medium mt-2">
-                Can&apos;t update. Data hasn&apos;t changed!
-              </p>
-            )}
-            <form className="mt-6 space-y-8" onSubmit={handleUpdateCategory}>
-              <div className="flex flex-col px-4">
-                <label className="text-xs font-bold">
-                  Name of the Category
-                </label>
-                <input
-                  type="text"
-                  name="categoryName"
-                  defaultValue={selectedCategory?.categoryName}
-                  className="border-b-2 border-gray-300 focus:border-black outline-none text-sm transition-all duration-500 ease-in-out py-3"
-                  required
-                />
-              </div>
-
-              <div className="flex flex-col px-4">
-                <label className="text-xs font-bold">Category Photo URL</label>
-                <input
-                  type="text"
-                  name="categoryPicLink"
-                  defaultValue={selectedCategory?.categoryPic}
-                  className="border-b-2 border-gray-300 focus:border-black outline-none text-sm transition-all duration-500 ease-in-out py-3"
-                  required
-                />
-              </div>
-
-              <button type="submit" className="btn btn-neutral text-white ml-3">
-                Update
-              </button>
-            </form>
-          </div>
-        </dialog>
       </div>
+
+      <dialog id="update-category-modal" className="modal">
+        <div className="modal-box">
+          <form method="dialog">
+            <button
+              className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+              onClick={() => setSelectedCategory({})}
+            >
+              ✕
+            </button>
+          </form>
+          <h3 className="font-bold text-lg">Update Category</h3>
+
+          {categoryUpdateError && (
+            <p className="text-error font-medium mt-2">
+              Can&apos;t update. Data hasn&apos;t changed!
+            </p>
+          )}
+          <form className="mt-6 space-y-8" onSubmit={handleUpdateCategory}>
+            <div className="flex flex-col px-4">
+              <label className="text-xs font-bold">
+                Name of the Category
+              </label>
+              <input
+                type="text"
+                name="categoryName"
+                defaultValue={selectedCategory?.categoryName}
+                className="border-b-2 border-gray-300 focus:border-black outline-none text-sm transition-all duration-500 ease-in-out py-3"
+                required
+              />
+            </div>
+
+            <div className="flex flex-col px-4">
+              <label className="text-xs font-bold">Category Photo URL</label>
+              <input
+                type="text"
+                name="categoryPicLink"
+                defaultValue={selectedCategory?.categoryPic}
+                className="border-b-2 border-gray-300 focus:border-black outline-none text-sm transition-all duration-500 ease-in-out py-3"
+                required
+              />
+            </div>
+
+            <button type="submit" className="btn btn-neutral text-white ml-3">
+              Update
+            </button>
+          </form>
+        </div>
+      </dialog>
     </div>
   );
 };
