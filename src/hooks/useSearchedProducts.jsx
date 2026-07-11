@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { getApiBaseUrl } from "../utils/apiConfig";
 
 const useSearchedProducts = (searchText) => {
   const [searchedProducts, setSearchedProducts] = useState([]);
@@ -7,7 +8,7 @@ const useSearchedProducts = (searchText) => {
 
   useEffect(() => {
     setIsSearchLoading(true);
-    const apiBaseUrl = import.meta.env.VITE_API_URL || "https://ub-jewellers-server-production.up.railway.app";
+    const apiBaseUrl = getApiBaseUrl();
     axios
       .get(
         `${apiBaseUrl}/products?searchText=${searchText}`

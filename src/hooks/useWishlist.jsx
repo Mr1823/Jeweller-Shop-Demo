@@ -8,21 +8,25 @@ const useWishlist = () => {
   const { user, isAuthLoading } = useAuthContext();
   const [axiosSecure] = useAxiosSecure();
 
+  const hasValidQuery =
+    !isAuthLoading &&
+    user?.uid !== undefined &&
+    localStorage.getItem("the-jewel-store-jwt-token") !== null;
+
   const {
     data: wishlistData,
-    isLoading: isWishlistLoading,
+    isLoading: isQueryLoading,
     refetch,
   } = useQuery({
-    enabled:
-      !isAuthLoading &&
-      user?.uid !== undefined &&
-      localStorage.getItem("the-jewel-store-jwt-token") !== null,
-    queryKey: ["wishlist"],
+    enabled: hasValidQuery,
+    queryKey: ["wishlist", user?.email],
     queryFn: async () => {
       const res = await axiosSecure.get(`/wishlist?email=${user?.email}`);
       return res.data;
     },
   });
+
+  const isWishlistLoading = isAuthLoading || (hasValidQuery && isQueryLoading);
 
   const addToWishlist = (productData) => {
     if (!isAuthLoading && user?.uid !== undefined) {

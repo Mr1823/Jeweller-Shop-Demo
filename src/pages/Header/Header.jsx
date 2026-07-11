@@ -28,6 +28,7 @@ import ProductCard from "../../components/ProductCard/ProductCard";
 import Slider from "react-slick";
 import useSearchedProducts from "../../hooks/useSearchedProducts";
 import axios from "axios";
+import { getApiBaseUrl } from "../../utils/apiConfig";
 import useCart from "../../hooks/useCart";
 import useUserInfo from "../../hooks/useUserInfo";
 
@@ -47,7 +48,7 @@ const Header = () => {
   // fetch or update upper nav notifications
   useEffect(() => {
     // un-comment to add new notification(reminder: notification array is in backend)
-    const apiBaseUrl = import.meta.env.VITE_API_URL || "https://ub-jewellers-server-production.up.railway.app";
+    const apiBaseUrl = getApiBaseUrl();
     // axios.post(`${apiBaseUrl}/nav-notifications`, {}).then((res) => {
     //   console.log(res.data);
     // });

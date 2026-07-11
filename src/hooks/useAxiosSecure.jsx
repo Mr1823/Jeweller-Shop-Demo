@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import useAuthContext from "./useAuthContext";
+import { getApiBaseUrl } from "../utils/apiConfig";
 
 const useAxiosSecure = () => {
   const navigate = useNavigate();
@@ -9,7 +10,7 @@ const useAxiosSecure = () => {
 
   // Create an interceptor instance of Axios with a base URL
   const axiosSecure = axios.create({
-    baseURL: import.meta.env.VITE_API_URL || "https://ub-jewellers-server-production.up.railway.app",
+    baseURL: getApiBaseUrl(),
   });
 
   // Add an interceptor to inject the authorization header

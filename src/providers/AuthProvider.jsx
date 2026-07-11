@@ -12,6 +12,7 @@ import {
 } from "firebase/auth";
 import app from "../firebase/firebase.config";
 import axios from "axios";
+import { getApiBaseUrl } from "../utils/apiConfig";
 
 export const AuthContext = createContext(null);
 const auth = getAuth(app);
@@ -59,7 +60,7 @@ const AuthProvider = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       if (currentUser?.uid !== undefined) {
         setUser(currentUser);
-        const apiBaseUrl = import.meta.env.VITE_API_URL || "https://ub-jewellers-server-production.up.railway.app";
+        const apiBaseUrl = getApiBaseUrl();
         axios
           .post(`${apiBaseUrl}/jwt`, {
             email: currentUser.email,

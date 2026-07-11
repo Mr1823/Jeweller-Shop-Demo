@@ -11,12 +11,13 @@ import {
 } from "react-icons/fa6";
 import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
+import { getApiBaseUrl } from "../../utils/apiConfig";
 
 const Footer = () => {
   const location = useLocation();
   const [categories, setCategories] = useState([]);
   useEffect(() => {
-    const apiBaseUrl = import.meta.env.VITE_API_URL || "https://ub-jewellers-server-production.up.railway.app";
+    const apiBaseUrl = getApiBaseUrl();
     axios
       .get(`${apiBaseUrl}/categories`)
       .then((res) => setCategories(res.data))

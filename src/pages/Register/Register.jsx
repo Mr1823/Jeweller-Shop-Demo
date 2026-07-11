@@ -8,6 +8,7 @@ import useAuthContext from "../../hooks/useAuthContext";
 import toast from "react-hot-toast";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
+import { getApiBaseUrl } from "../../utils/apiConfig";
 import AnimateText from "@moxy/react-animate-text";
 import Swal from "sweetalert2";
 import CustomHelmet from "../../components/CustomHelmet/CustomHelmet";
@@ -109,7 +110,7 @@ const Register = () => {
 
     // convert image to base64
     convertBase64(profilePicFile[0]).then((base64Image) => {
-      const apiBaseUrl = import.meta.env.VITE_API_URL || "https://ub-jewellers-server-production.up.railway.app";
+      const apiBaseUrl = getApiBaseUrl();
       // upload image to cloudinary
       axios
         .post(`${apiBaseUrl}/cloudinary-upload`, {
@@ -177,7 +178,7 @@ const Register = () => {
     setRegisterError(false);
     signInGoogle()
       .then((res) => {
-        const apiBaseUrl = import.meta.env.VITE_API_URL || "https://ub-jewellers-server-production.up.railway.app";
+        const apiBaseUrl = getApiBaseUrl();
         // add user to users collection in db
         axios.post(`${apiBaseUrl}/users`, {
           name: res?.user?.displayName,

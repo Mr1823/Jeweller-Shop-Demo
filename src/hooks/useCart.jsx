@@ -8,29 +8,30 @@ const useCart = () => {
   const { user, isAuthLoading } = useAuthContext();
   const [axiosSecure] = useAxiosSecure();
 
+  const hasValidQuery =
+    !isAuthLoading &&
+    user?.uid !== undefined &&
+    localStorage.getItem("the-jewel-store-jwt-token") !== null;
+
   const {
     data: cartData,
-    isLoading: isCartLoading,
+    isLoading: isQueryLoading,
     refetch,
   } = useQuery({
-    enabled:
-      !isAuthLoading &&
-      user?.uid !== undefined &&
-      localStorage.getItem("the-jewel-store-jwt-token") !== null,
-    queryKey: ["cart"],
+    enabled: hasValidQuery,
+    queryKey: ["cart", user?.email],
     queryFn: async () => {
       const res = await axiosSecure.get(`/cart?email=${user?.email}`);
       return res.data;
     },
   });
 
+  const isCartLoading = isAuthLoading || (hasValidQuery && isQueryLoading);
+
   // fetch subtotal amount of cart
   const { data: cartSubtotal } = useQuery({
-    enabled:
-      !isAuthLoading &&
-      user?.uid !== undefined &&
-      localStorage.getItem("the-jewel-store-jwt-token") !== null,
-    queryKey: ["cart-subtotal"],
+    enabled: hasValidQuery,
+    queryKey: ["cart-subtotal", user?.email],
     queryFn: async () => {
       const res = await axiosSecure.get(`/cart/subtotal?email=${user?.email}`);
       return res.data;

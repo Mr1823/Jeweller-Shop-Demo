@@ -8,21 +8,25 @@ const useUserInfo = () => {
   const [axiosSecure] = useAxiosSecure();
   const [totalSpentArray, setTotalSpentArray] = useState([]);
 
+  const hasValidQuery =
+    !isAuthLoading &&
+    user?.uid !== undefined &&
+    localStorage.getItem("the-jewel-store-jwt-token") !== null;
+
   const {
     data: userFromDB,
-    isLoading: isUserLoading,
+    isLoading: isQueryLoading,
     refetch,
   } = useQuery({
-    enabled:
-      !isAuthLoading &&
-      user?.uid !== undefined &&
-      localStorage.getItem("the-jewel-store-jwt-token") !== null,
-    queryKey: ["user"],
+    enabled: hasValidQuery,
+    queryKey: ["user", user?.email],
     queryFn: async () => {
       const res = await axiosSecure.get(`/user?email=${user?.email}`);
       return res.data;
     },
   });
+
+  const isUserLoading = isAuthLoading || (hasValidQuery && isQueryLoading);
 
   // fetch total spent amount by users
   useEffect(() => {

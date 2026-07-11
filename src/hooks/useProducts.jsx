@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useQuery } from "react-query";
+import { getApiBaseUrl } from "../utils/apiConfig";
 
 const useProducts = () => {
   const {
@@ -9,7 +10,7 @@ const useProducts = () => {
   } = useQuery({
     queryKey: ["products"],
     queryFn: async () => {
-      const apiBaseUrl = import.meta.env.VITE_API_URL || "https://ub-jewellers-server-production.up.railway.app";
+      const apiBaseUrl = getApiBaseUrl();
       const res = await axios.get(`${apiBaseUrl}/products`);
       return res.data;
     },

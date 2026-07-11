@@ -4,6 +4,7 @@ import { useForm, Controller } from "react-hook-form";
 import { Link, useLocation } from "react-router-dom";
 import uploadIcon from "../../../assets/image-upload.png";
 import axios from "axios";
+import { getApiBaseUrl } from "../../../utils/apiConfig";
 import useAuthContext from "../../../hooks/useAuthContext";
 import Select from "react-select";
 import Swal from "sweetalert2";
@@ -33,7 +34,7 @@ const AdminAddProduct = () => {
   // fetch categories
   useEffect(() => {
     if (user) {
-      const apiBaseUrl = import.meta.env.VITE_API_URL || "https://ub-jewellers-server-production.up.railway.app";
+      const apiBaseUrl = getApiBaseUrl();
       axios
         .get(`${apiBaseUrl}/categories`)
         .then((res) => setCategories(res.data))

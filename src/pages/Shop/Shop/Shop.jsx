@@ -7,6 +7,7 @@ import ProductCard from "../../../components/ProductCard/ProductCard";
 import { Pagination } from "react-pagination-bar";
 import useProducts from "../../../hooks/useProducts";
 import axios from "axios";
+import { getApiBaseUrl } from "../../../utils/apiConfig";
 import { TfiClose } from "react-icons/tfi";
 import { RiEqualizerLine } from "react-icons/ri";
 import CardSkeleton from "../../../components/CardSkeleton/CardSkeleton";
@@ -60,7 +61,7 @@ const Shop = () => {
   useEffect(() => {
     setFilterLoading(true);
 
-    const apiBaseUrl = import.meta.env.VITE_API_URL || "https://ub-jewellers-server-production.up.railway.app";
+    const apiBaseUrl = getApiBaseUrl();
     axios
       .get(
         `${apiBaseUrl}/products/filter?category=${category}&minPrice=${minimumPrice}&maxPrice=${maximumPrice}&priceOrder=${priceSortingOrder}&size=${size}&carate=${carate}&search=${searchText}`
@@ -110,7 +111,7 @@ const Shop = () => {
 
   useEffect(() => {
     // fetch all categories
-    const apiBaseUrl = import.meta.env.VITE_API_URL || "https://ub-jewellers-server-production.up.railway.app";
+    const apiBaseUrl = getApiBaseUrl();
     axios
       .get(`${apiBaseUrl}/categories`)
       .then((res) => {

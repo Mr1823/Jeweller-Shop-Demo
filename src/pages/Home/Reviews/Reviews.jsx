@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import "./Reviews.css";
 import { useQuery } from "react-query";
 import axios from "axios";
+import { getApiBaseUrl } from "../../../utils/apiConfig";
 import Slider from "react-slick";
 import ReviewCard from "./ReviewCard/ReviewCard";
 import { TfiQuoteLeft, TfiQuoteRight } from "react-icons/tfi";
@@ -11,7 +12,7 @@ const Reviews = () => {
   const { data: reviews, isLoading: isReviewsLoading } = useQuery({
     queryKey: ["reviews"],
     queryFn: async () => {
-      const apiBaseUrl = import.meta.env.VITE_API_URL || "https://ub-jewellers-server-production.up.railway.app";
+      const apiBaseUrl = getApiBaseUrl();
       const res = await axios.get(`${apiBaseUrl}/reviews`);
       return res.data;
     },
